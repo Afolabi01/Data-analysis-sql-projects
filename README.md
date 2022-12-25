@@ -1,4 +1,4 @@
-# Movies
+# Data Analysis in SQL
 This are SQL projects using the Postgres flavor.
 This project had the data cleaned in Google Sheets before the table was created in VS code and the values were copied in.
 The date format was changed with the CUSTOM FORMAT function on Google Sheets and then loaded into VS code(due to the accepted date type in Postgresql).
