@@ -1,4 +1,4 @@
- /*
+ 
  CREATE TABLE IF NOT EXISTS movies (
    movie_title VARCHAR(100),
    release_date DATE,
@@ -21,7 +21,7 @@ COPY movies(movie_title,release_date,wikipedia_url,genre,director_1,director_2,
 FROM 'C:\Users\Public\movie_data.csv'
 DELIMITER ','
 CSV HEADER;
-*/
+
 
 --Checking our data to make sure import is correct
 SELECT * 
