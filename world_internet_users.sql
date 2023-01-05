@@ -1,4 +1,4 @@
-/*
+
 CREATE TABLE IF NOT EXISTS world_internet_users (
    country VARCHAR(100),
    region VARCHAR(100),
@@ -11,7 +11,7 @@ COPY world_internet_users(country,region,population,internet_users,percentage_of
 FROM 'C:\Users\Public\world_internet_user.csv'
 DELIMITER ','
 CSV HEADER;
-*/
+
 
 --Checking if observations were copied correctly
 SELECT *
@@ -36,8 +36,13 @@ FROM (SELECT region, SUM(internet_users) as internet_user_by_region , SUM(popula
 ORDER BY percentage_internet_users_by_region DESC;
 
 --What country had the highest amount of internet users for each region
-WITH max_values as (SELECT country , region , MAX(internet_users)
+WITH max_values as (SELECT country , region , internet_users ,
+                    RANK () OVER(PARTITION BY region ORDER BY internet_users DESC) as rank_of_country
 FROM world_internet_users
-WHERE country <> 'Africa'
-GROUP BY country ,region
-ORDER BY region;)
+WHERE country <> 'World'
+GROUP BY country ,region ,internet_users
+ORDER BY region)
+
+SELECT country , internet_users , region 
+FROM max_values
+WHERE rank_of_country = 1;
