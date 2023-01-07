@@ -18,9 +18,9 @@ SELECT *
 FROM world_internet_users;
 
 --Confirmed our data is complete and we have 243 rows including the world statistics
---Movong forward I would be excluding the world statistics from most of my questions
+--Moving forward I would be excluding the world statistics from most of my questions
 
---What are the population of users per region?
+--What are the population of users(total and internet) per region?
 SELECT region, SUM(internet_users) as internet_user_by_region , SUM(population) as region_population
 FROM world_internet_users
 WHERE country <> 'World'
