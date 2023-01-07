@@ -13,7 +13,7 @@ DELIMITER ','
 CSV HEADER;
 
 
---Checking if observations were copied correctly
+--Confirming observations were copied correctly
 SELECT *
 FROM world_internet_users;
 
