@@ -89,7 +89,7 @@ FROM movies
 ORDER BY EXTRACT(YEAR from release_date);
 
 
---Getting the top 3 highest earning movies for all years
+--Getting the 3 highest earning movies for all years
 SELECT movie_title, year_of_release ,revenue, ranking_in_year
 FROM (SELECT movie_title , EXTRACT(YEAR from release_date) as year_of_release, revenue ,
               RANK() OVER(PARTITION BY EXTRACT(YEAR from release_date) ORDER BY revenue DESC) as ranking_in_year
