@@ -1,3 +1,4 @@
+/*
 CREATE TABLE IF NOT EXISTS car_price (
    car_id VARCHAR(100),
    price BIGINT,
@@ -21,15 +22,15 @@ CREATE TABLE IF NOT EXISTS car_price (
    registered_city VARCHAR(100)
 )
 
+
 copy car_price(car_id,price,fuel_type,gear_type,make,model,year_of_manufacture,
 				colour,condition,mileage,engine_size,selling_condition,bought_condition,
 				car_type,trim,drivetrain,seats,number_of_cylinders,horse_power,registered_city
-
 )
 from 'C:\Users\Public\car_prices.csv'
 delimiter ','
 CSV Header;
-
+*/
 
 -- Confirming the properties of the data has over 3700+ rows and 20 columns
 SELECT *
